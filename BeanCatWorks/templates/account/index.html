@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "The Beancat Works Main" %}{% endblock %}
+
+{% block content %}
+
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="m-y-2 p-y-2 text-primary text-xs-center" contenteditable="true">Welcome to the Beancat Works&nbsp;</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="m-y-1 p-y-2 text-xs-center">Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                    <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                    <br>Ut enim ad minim veniam, quis nostrud</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills  nav-stacked">
+
+                    {% if user.is_authenticated %}
+                    <li class="m-y-1 nav-item p-y-3 text-xs-center">
+                        <a href="{% url 'account_email' %}" class="active nav-link">Change Email</a>
+                    </li>
+                    <li class="m-y-1 nav-item p-y-1 text-xs-center">
+                        <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>
+                    </li>
+
+                    {% else %}
+
+                    <li class="nav-item p-y-1 text-xs-center">
+                        <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
+                    </li>
+                    <li class="nav-item p-y-1 text-xs-center">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

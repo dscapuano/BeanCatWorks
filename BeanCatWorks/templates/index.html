@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "The Beancat Works index" %}{% endblock %}
+
+{% block content %}
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="center-block img-fluid" src="{% static 'img/BeanCatWorksFront.png' %}">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

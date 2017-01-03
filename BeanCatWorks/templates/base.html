@@ -1,0 +1,72 @@
+{% load static %}
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-pVJelSCJ58Og1XDc2E95RVYHZDPb9AVyXsI8NoVpB2xmtxoZKJePbMfE4mlXw7BJ" crossorigin="anonymous">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar" role="banner">
+    <div id="id_internal_nav_bar_container" class="container fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".right_hand_links"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img id="id_logo" src="{% static 'img/BeanCatWorksLogo.png' %}" height="35"
+                                                  title="BeanCatWorks Logo" alt="BeanCatWorks logo"/></a>
+        </div>
+
+        <div class="collapse navbar-collapse right_hand_links">
+            <div class="row">
+                <ul id="id_header_links" class="nav navbar-nav navbar-right ">
+                    <li><a id="id_feedback_link" class='feedback_link' href="#">Send feedback</a></li>
+                    <li><a id="id_forums_link" href="#">Forums</a></li>
+                    <li><a href="#/wiki/" id="id_help_link">Help</a></li>
+                    <li><a href="#" id="id_blog_link">Blog</a></li>
+
+
+                    <li><a style="font-weight: bold;" href="{% url 'account_signup' %}" id="id_signup_link">Signup</a>
+                    </li>
+                    <li><a style="font-weight: bold;" href="{% url 'account_login' %}" id="id_login_link">Log in</a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</nav>
+
+
+{% block content %}
+{% endblock %}
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p>
+            Copyright &copy; 2016 The BeanCatWorks
+        </p>
+    </div>
+</nav>
+<!--
+<div id="wrap">
+  <div id="main" class="container clear-top">
+    <p>Copyright &copy; 2016 <a href="#/about/company_details/">The BeanCatWorks</a>
+            &mdash;
+    </p>
+  </div>
+</div>
+-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
