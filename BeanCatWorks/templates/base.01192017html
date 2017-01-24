@@ -1,0 +1,73 @@
+{% load static %}
+<html>
+<head>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/navbar_techandall.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome/css/font-awesome-ie7.css' %}" rel="stylesheet">
+    <link href="{% static 'font-awesome/css/font-awesome-ie7.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+<nav class="navbar" role="banner">
+    <div id="id_internal_nav_bar_container" class="container fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".right_hand_links"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+            <a class="navbar-brand" href="/"><img id="id_logo" src="{% static 'img/BeanCatWorksLogo.png' %}" height="45"
+                                                  title="BeanCatWorks Logo" alt="BeanCatWorks logo"/></a>
+        </div>
+
+        <div class="collapse navbar-collapse right_hand_links">
+            <div class="row">
+                <ul id="id_header_links" class="nav navbar-nav navbar-right ">
+                    <li><a id="id_feedback_link" class='feedback_link' href="#">Send feedback</a></li>
+                    <li><a id="id_forums_link" href="#">Forums</a></li>
+                    <li><a href="#/wiki/" id="id_help_link">Help</a></li>
+                    <li><a href="#" id="id_blog_link">Blog</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="#"> Profile</a></li>
+                        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                    {% else %}
+                        <li><a style="font-weight: bold;" href="{% url 'account_signup' %}" id="id_signup_link">Signup</a></li>
+                        <li><a style="font-weight: bold;" href="{% url 'account_login' %}" id="id_login_link">Log in</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</nav>
+
+
+{% block content %}
+{% endblock %}
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <footer id="footer">
+            <p class="h5 text-muted">Copyright &copy; 2016 The BeanCatWorks</p>
+        </footer>
+    </div>
+</nav>
+
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"> </script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"> </script>
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"> </script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"> </script>
+
+</body>
+</html>

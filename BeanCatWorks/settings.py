@@ -150,6 +150,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 GRAPPELLI_ADMIN_TITLE = 'The BeanCatWorks - Equipment Manager'
 
+#LOGIN_REDIRECT_URL =
+
 try:
     from local_settings import *
 except ImportError:
